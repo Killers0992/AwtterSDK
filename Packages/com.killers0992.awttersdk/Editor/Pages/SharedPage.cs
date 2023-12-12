@@ -129,8 +129,6 @@ namespace AwtterSDK.Editor.Pages
             int count = 0;
             EditorGUILayout.BeginHorizontal();
 
-            Debug.Log(_main.Settings == null);
-
             for (int x = 0; x < _main.Settings.Buttons.Count; x++)
             {
                 ButtonLink(_main.Settings.Buttons[x]);
