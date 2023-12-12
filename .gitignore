@@ -60,5 +60,8 @@ crashlytics-build.properties
 
 .idea/.idea.vpm-package-maker/.idea
 Assets/PackageMakerWindowData.asset*
+Assets/AwtterInstalledPackages.json*
+ProjectSettings
+UserSettings
 .idea
 .vscode

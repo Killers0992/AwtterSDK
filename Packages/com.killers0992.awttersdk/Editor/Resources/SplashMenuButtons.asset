@@ -1,0 +1,45 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e67598300076cd947a9689bf2265919e, type: 3}
+  m_Name: SplashMenuButtons
+  m_EditorClassIdentifier: 
+  credPath: 
+  SceneFolder: "-\u0295\u2022\u1D25\u2022\u0294 OPEN THIS FIRST \u0295\u2022\u1D25\u2022\u0294"
+  SceneButtonHeight: 30
+  LinkButtonWidth: 150
+  LinkButtonHeight: 25
+  SpaceBetweenLinkButtons: 10
+  Buttons:
+  - ButtonType: 0
+    ButtonText: Community
+    Link: https://discord.com/invite/awtter
+    Image: {fileID: 0}
+  - ButtonType: 0
+    ButtonText: Shop
+    Link: https://shadethebat.art
+    Image: {fileID: 0}
+  - ButtonType: 0
+    ButtonText: Support
+    Link: https://www.patreon.com/shadethebat
+    Image: {fileID: 0}
+  - ButtonType: 0
+    ButtonText: How to upload
+    Link: https://www.youtube.com/watch?v=mGnFyus_U_U
+    Image: {fileID: 0}
+  - ButtonType: 1
+    ButtonText: Changelogs
+    Link: changelogs
+    Image: {fileID: 0}
+  - ButtonType: 0
+    ButtonText: Other Tutorials
+    Link: https://shadedoes3d.com/tutorial/
+    Image: {fileID: 0}

@@ -1,0 +1,57 @@
+AWTTER 3.0.74h
+
+SDK :
+	• Now called ASDK (Awtter Space Development Kit)
+	• DLCs can be installed from SDK anytime (manage packages)
+	• The SDK now force-installs post processing, Awtter Merger and Cameratool
+	• Patreon content has its own section
+	• Reset project option (cleans everything Awtter related)
+
+
+Merger :
+	• Works better with 3.0 content
+
+
+Textures :
+	• (Substance P) symmetry fixed
+	• (Substance P) Exploded version added
+	• (Substance P + PSD) New eyes texture
+	• (PSD) file fixed with thicker edges for mipmap issues
+
+
+Unity
+	• Model back on T•pose
+	• UI/Environment rework (to match T•pose)
+	• UI/Environment accessories transparency fixed
+	• Chubby neck fluff fix
+	• Now full synced between PC and Quest
+	• It's now possible to trigger PC only things on Quest (only PC will see)
+	• Back collar polygons are back
+	• Tail dynamics adjusted to avoid back destruction
+	• Hands gestures should now be symmetrical
+	• The boop animation does the sound again (louder than 2.9)
+	• New radial toggle : Big beans
+	• New radial toggle : Avatar lightning 
+	• AA viseme fixed
+	• Sad animation is now animated properly
+	• Facetracking now uses smooth and binary techs
+	• Facetracking fixes
+	• Sounds load SDK warning fixed
+	• Passive blink is back
+	• Two materials added for the eyes, using body texture
+	• Glitter (star eyes) is now only on the eyes material so you can add glitter to your body now
+	• Body material set to outline
+	• Cheeks outline issue fixed
+
+
+Fbx (model)
+	• Shapekeys cleanup
+	• Small pupils blendshape fixed
+	• Cheekpuff (facetracking) fixed
+	• Neck weightpaint fixed and smoothed
+	• Pointy butt fixed
+	• Pointy crotch fixed
+	• Back / Tail open mesh fixed
+	• 2D fluff is now double meshed to avoid using backface render for optimization
+	• Viseme "aa" fixed
+	• Viseme "oh" fixed
