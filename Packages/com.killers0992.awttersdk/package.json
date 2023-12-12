@@ -6,9 +6,9 @@
   "description": "Tool for managing content from AwtterSpace.",
   "vrchatVersion": "2022.1.1",
   "author": {
-    "name": "Momo the Monster",
-    "email": "momodmonster@gmail.com",
-    "url": "https://mmmlabs.com"
+    "name": "Killers0992",
+    "email": "killers0992@gmail.com",
+    "url": "https://killers.dev"
   },
   "dependencies": {
     "com.unity.nuget.newtonsoft-json": "3.0.2",
