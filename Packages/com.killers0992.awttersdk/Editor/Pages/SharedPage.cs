@@ -11,7 +11,7 @@ namespace AwtterSDK.Editor.Pages
         private Texture2D _windowBackground;
         private Texture2D _awtterSdkImage;
 
-        private AwtterSdkInstaller _main;
+        internal AwtterSdkInstaller _main;
 
         public Texture2D WindowBackground
         {
@@ -39,6 +39,7 @@ namespace AwtterSDK.Editor.Pages
         public GUIStyle WindowCustomButton2;
         public GUIStyle WindowCustomButton3;
         public GUIStyle WindowCustomButton4;
+
         public SharedPage(AwtterSdkInstaller main)
         {
             _main = main;
@@ -127,6 +128,8 @@ namespace AwtterSDK.Editor.Pages
             EditorGUILayout.BeginVertical();
             int count = 0;
             EditorGUILayout.BeginHorizontal();
+
+            Debug.Log(_main.Settings == null);
 
             for (int x = 0; x < _main.Settings.Buttons.Count; x++)
             {

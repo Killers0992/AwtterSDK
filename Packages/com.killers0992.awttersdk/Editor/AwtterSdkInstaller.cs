@@ -19,7 +19,6 @@
     using AwtterSDK.Editor.Enums;
     using System;
     using Assets.Awtter_SDK.Editor.Models;
-    using VRC.Localization;
 
     class SdkRefresh : AssetPostprocessor
     {
@@ -31,7 +30,6 @@
 
     public class AwtterSdkInstaller : EditorWindow
     {
-        public static Version Version { get; } = new Version("1.2.0");
         private static AwtterSdkInstaller _window;
         private static string _installedPackagesPath => Path.Combine(Application.dataPath, "AwtterInstalledPackages.json");
 
@@ -152,15 +150,14 @@
 
         void AddIfMissing(bool force = false)
         {
-            if (Settings == null || force)
-            {
-                Settings = AssetDatabase.LoadAssetAtPath<AwboiSplashButtons>(Path.Combine(Paths.MainPath, "Editor", "Resources", "SplashMenuButtons.asset"));
-
-                SaveInstalledPackagesStorage();
-            }
-
             if (Shared == null || force)
+            {
                 Shared = new SharedPage(this);
+            }
+            else if (Shared != null && Shared._main == null)
+            {
+                Shared._main = this;
+            }
 
             if (UpdateCurrentUser || force)
             {
@@ -268,7 +265,27 @@
 
         public static InstalledPackagesModel InstalledPackages { get; private set; }
 
-        public AwboiSplashButtons Settings { get; private set; }
+        private AwboiSplashButtons _settings;
+        public AwboiSplashButtons Settings
+        {
+            get
+            {
+                if (_settings == null)
+                {
+                    _settings = AssetDatabase.LoadAssetAtPath<AwboiSplashButtons>(Path.Combine(Paths.MainPath, "Editor", "Resources", "SplashMenuButtons.asset"));
+
+                    if (_settings == null)
+                    {
+                        Debug.Log("still null");
+                    }
+
+                    SaveInstalledPackagesStorage();
+                }
+
+                return _settings;
+            }
+        }
+
         public SharedPage Shared { get; private set; }
 
         public static bool IsBaseIntalled => CurrentBase?.IsInstalled == true;
@@ -371,8 +388,6 @@
 
         public static DateTime RemoteConfigGetDelay = DateTime.Now;
         public static ConfigResponseModel RemoteConfig = null;
-
-        public static bool IsUpToDate => RemoteConfig?.AwtterSdk?.Version2 != null && RemoteConfig.AwtterSdk.Version2.CompareTo(Version) < 1;
 
         public static SdkStatus CurrentStatus
         {

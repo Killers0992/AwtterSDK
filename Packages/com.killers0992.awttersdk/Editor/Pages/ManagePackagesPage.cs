@@ -31,7 +31,11 @@ namespace AwtterSDK.Editor.Pages
             GUILayout.EndHorizontal();
             GUI.color = AwtterSdkInstaller.CurrentBase.IsOutdated ? Color.yellow : Color.green;
             GUI.enabled = false;
-            GUILayout.Button(AwtterSdkInstaller.CurrentBase.IsOutdated ? $"Outdated, Version {AwtterSdkInstaller.CurrentBase.InstalledVersion} -> {AwtterSdkInstaller.CurrentBase.Version}" : $"Installed, Version {AwtterSdkInstaller.CurrentBase.InstalledVersion}", GUILayout.Height(16));
+            GUILayout.BeginHorizontal();
+            GUILayout.Label($"Version {(AwtterSdkInstaller.CurrentBase.IsOutdated ? $"{AwtterSdkInstaller.CurrentBase.Version} > {AwtterSdkInstaller.CurrentBase.Version}" : AwtterSdkInstaller.CurrentBase.InstalledVersion)}");
+            GUILayout.FlexibleSpace();
+            GUILayout.Button(AwtterSdkInstaller.CurrentBase.IsOutdated ? $"🗱 Update" : $"✔ Installed", _main.Shared.WindowCustomButton3, GUILayout.Height(26), GUILayout.Width(150));
+            GUILayout.EndHorizontal();
             GUI.enabled = true;
             GUI.color = Color.white;
             GUILayout.Space(30);
@@ -44,12 +48,16 @@ namespace AwtterSDK.Editor.Pages
                 GUILayout.Box(TextureCache.GetTextureOrDownload(dlc.Icon), GUILayout.Height(32), GUILayout.Width(32));
                 GUILayout.Label(dlc.Name, CustomLabel, GUILayout.Height(32));
                 GUILayout.EndHorizontal();
-                GUI.color = dlc.Install ? Color.cyan : dlc.IsInstalled ? Color.green : dlc.IsOutdated ? Color.yellow : Color.gray;
+                GUI.color = dlc.Install ? Color.yellow : dlc.IsInstalled ? Color.green : dlc.IsOutdated ? Color.yellow : Color.cyan;
                 GUI.enabled = !dlc.IsInstalled;
-                if (GUILayout.Button(dlc.IsInstalled ? $"Installed, Version {dlc.InstalledVersion}" : dlc.IsOutdated ? $"Outdated, Version {dlc.InstalledVersion} -> {dlc.Version}" : $"Install, Version {dlc.Version}", GUILayout.Height(16)))
+                GUILayout.BeginHorizontal();
+                GUILayout.Label($"Version {(dlc.IsInstalled ? dlc.IsOutdated ? $"{dlc.Version} > {dlc.Version}" : dlc.InstalledVersion : dlc.Version)}");
+                GUILayout.FlexibleSpace();
+                if (GUILayout.Button(dlc.IsInstalled ? $"✔ Installed" : dlc.IsOutdated ? $"🗱 Update" : $"⇩ Install", _main.Shared.WindowCustomButton3, GUILayout.Height(26), GUILayout.Width(150)))
                 {
                     dlc.Install = !dlc.Install;
                 }
+                GUILayout.EndHorizontal();
                 GUI.enabled = true;
                 GUI.color = Color.white;
                 GUILayout.Space(30);
@@ -63,12 +71,16 @@ namespace AwtterSDK.Editor.Pages
                 GUILayout.Box(TextureCache.GetTextureOrDownload(tool.Icon), GUILayout.Height(32), GUILayout.Width(32));
                 GUILayout.Label(tool.Name, CustomLabel, GUILayout.Height(32));
                 GUILayout.EndHorizontal();
-                GUI.color = tool.Install ? Color.cyan : tool.IsInstalled ? Color.green : tool.IsOutdated ? Color.yellow : Color.gray;
+                GUI.color = tool.Install ? Color.yellow : tool.IsInstalled ? Color.green : tool.IsOutdated ? Color.yellow : Color.cyan;
                 GUI.enabled = !tool.IsInstalled;
-                if (GUILayout.Button(tool.IsInstalled ? $"Installed, Version {tool.InstalledVersion}" : tool.IsOutdated ? $"Outdated, Version {tool.InstalledVersion} -> {tool.Version}" : $"Install, Version {tool.Version}", GUILayout.Height(16)))
+                GUILayout.BeginHorizontal();
+                GUILayout.Label($"Version {(tool.IsInstalled ? tool.IsOutdated ? $"{tool.Version} > {tool.Version}" : tool.InstalledVersion : tool.Version)}");
+                GUILayout.FlexibleSpace();
+                if (GUILayout.Button(tool.IsInstalled ? $"✔ Installed" : tool.IsOutdated ? $"🗱 Update" : $"⇩ Install", _main.Shared.WindowCustomButton3, GUILayout.Height(26), GUILayout.Width(150)))
                 {
                     tool.Install = !tool.Install;
                 }
+                GUILayout.EndHorizontal();
                 GUI.enabled = true;
                 GUI.color = Color.white;
                 GUILayout.Space(30);
@@ -76,7 +88,7 @@ namespace AwtterSDK.Editor.Pages
             GUILayout.EndScrollView();
 
             GUI.enabled = AwtterSdkInstaller.AvaliableDlcs.Any(x => x.Install) || AwtterSdkInstaller.AvaliableTools.Any(x => x.Install);
-            GUI.color = Color.green;
+            GUI.color = (AwtterSdkInstaller.AvaliableDlcs.Any(x => x.Install) || AwtterSdkInstaller.AvaliableTools.Any(x => x.Install)) ? Color.green : Color.gray;
             if (GUILayout.Button("▶   Run SDK Installer", _main.Shared.WindowCustomButton3, GUILayout.Height(27)))
                 AwtterSdkInstaller.IsInstalling = true;
             GUI.color = Color.white;

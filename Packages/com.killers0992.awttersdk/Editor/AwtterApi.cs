@@ -15,7 +15,7 @@
     {
         public static IEnumerator GetProducts(bool isFirst = true)
         {
-            using (var www = UnityWebRequest.Get("https://shadedoes3d.com/api/products"))
+            using (var www = UnityWebRequest.Get("https://awtterspace.com/api/products"))
             {
                 www.SetRequestHeader("Authorization", $"Token {TokenCache.Token}");
 
@@ -36,7 +36,7 @@
 
         public static IEnumerator GetConfig()
         {
-            using (var www = UnityWebRequest.Get("https://shadedoes3d.com/api/config"))
+            using (var www = UnityWebRequest.Get("https://awtterspace.com/api/config"))
             {
                 yield return www.SendWebRequest();
 
@@ -53,7 +53,7 @@
 
         public static IEnumerator GetCurrentUser()
         {
-            using (var www = UnityWebRequest.Get("https://shadedoes3d.com/api/users/me"))
+            using (var www = UnityWebRequest.Get("https://awtterspace.com/api/users/me"))
             {
                 www.SetRequestHeader("Authorization", $"Token {TokenCache.Token}");
 
@@ -72,7 +72,7 @@
 
         public static IEnumerator GetToolbox()
         {
-            using (var www = UnityWebRequest.Get("https://shadedoes3d.com/api/products/toolbox"))
+            using (var www = UnityWebRequest.Get("https://awtterspace.com/api/products/toolbox"))
             {
                 www.SetRequestHeader("Authorization", $"Token {TokenCache.Token}");
 
@@ -98,7 +98,7 @@
 
         public static IEnumerator GetPatreon()
         {
-            using (var www = UnityWebRequest.Get("https://shadedoes3d.com/api/patreon/me"))
+            using (var www = UnityWebRequest.Get("https://awtterspace.com/api/patreon/me"))
             {
                 www.SetRequestHeader("Authorization", $"Token {TokenCache.Token}");
 
