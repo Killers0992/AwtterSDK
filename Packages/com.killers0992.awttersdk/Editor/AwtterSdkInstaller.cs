@@ -31,7 +31,7 @@
 
     public class AwtterSdkInstaller : EditorWindow
     {
-        public static Version Version { get; } = new Version("1.2.0");
+        public static Version Version { get; } = new Version("1.2.3");
         private static AwtterSdkInstaller _window;
         private static string _installedPackagesPath => Path.Combine(Application.dataPath, "AwtterInstalledPackages.json");
 
