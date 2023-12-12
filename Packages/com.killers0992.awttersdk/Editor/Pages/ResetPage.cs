@@ -66,7 +66,7 @@ namespace AwtterSDK.Editor.Pages
 
             if (GUILayout.Button($"YES", _main.Shared.WindowCustomButton3, GUILayout.MinWidth(50), GUILayout.MinHeight(32)))
             {
-                FileUtil.DeleteFileOrDirectory("Assets/_Shadedoes3D");
+                FileUtil.DeleteFileOrDirectory("Assets/_Shade The Bat");
                 FileUtil.DeleteFileOrDirectory("Assets/AwtterInstalledPackages.json");
 
                 AssetDatabase.Refresh();
