@@ -161,6 +161,8 @@
 
             if (UpdateCurrentUser || force)
             {
+                SaveInstalledPackagesStorage();
+            
                 EditorCoroutineUtility.StartCoroutine(AwtterApi.GetCurrentUser(), this);
                 EditorCoroutineUtility.StartCoroutine(AwtterApi.GetPatreon(), this);
                 EditorCoroutineUtility.StartCoroutine(AwtterApi.GetToolbox(), this);
