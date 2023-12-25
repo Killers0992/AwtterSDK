@@ -1,3 +1,4 @@
+[![Github All Releases](https://img.shields.io/github/downloads/Killers0992/AwtterSDK/total.svg)]()
 # Awtter SDK
 
 <p align="center">
