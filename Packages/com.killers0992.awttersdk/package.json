@@ -2,7 +2,6 @@
   "name": "com.killers0992.awttersdk",
   "displayName": "Awtter SDK",
   "version": "1.2.8",
-  "unity": "2022.6",
   "description": "Tool for managing content from AwtterSpace.",
   "vrchatVersion": "2022.1.1",
   "author": {
